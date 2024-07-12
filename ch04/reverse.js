@@ -9,28 +9,14 @@ function reverseArray(array) {
 // console.log(reverseArray([1, 2, 3, 4, 10]));
 
 function reverseArrayInPlace(array) {
-  //   for (let i = 0; i < array.length; i++) {
-  //     console.log(array[i]);
-  //   }
-  let count = array.length;
-  console.log(count);
-  while (count > 0) {
-    array.unshift(array.pop());
-    console.log(array);
-    count = count - 1;
+  let temp = 0;
+  for (let i = 0; i < Math.floor(a.length / 2); i++) {
+    temp = a[i];
+    a.splice(i, 1, a[a.length - 1 - i]);
+    a.splice(a.length - 1 - i, 1, temp);
   }
+  return array;
 }
 
-// reverseArrayInPlace([3, 4, 5, 6]);
-
-function sum(nums) {
-  let total = 0;
-  for (let i of nums) {
-    total += i;
-  }
-  const sum = total / nums.length;
-  console.log(`total: ${total}`);
-  console.log(`sum: ${sum}`);
-}
-
-//sum([168, 174, 103, 179]);
+const a = [1, 2, 3, 4, 5, 6, 7];
+console.log(reverseArrayInPlace(a));
